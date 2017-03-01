@@ -1,8 +1,13 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Player {
-    int health;
+    int health = 100;
+    int level;
+    int experience;
+    public static ArrayList<String> stats = new ArrayList<>();
+
 
 
     public static int roll4(){
@@ -47,6 +52,9 @@ public class Player {
         int number = rand.nextInt(20);
         if (number == 1){
             System.out.println("Critical Failure!");
+        }
+        if (number == 20) {
+            System.out.println("Critical Roll!");
         }
         return number;
     }

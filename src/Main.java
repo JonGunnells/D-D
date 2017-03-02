@@ -7,10 +7,10 @@ public class Main {
 
 
     public static void main(String[] args) {
-       while (true) {
-           //Player.intro();
-           Enemy.firstInteraction();
-       }
+        //while (true) {
+        // Player.intro();
+        Enemy.firstInteraction();
+       ///}
 
 
     }

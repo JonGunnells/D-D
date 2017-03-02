@@ -71,25 +71,23 @@ public class Enemy {
             System.out.println("player rolls " + player);
             int troll = enRoll20();
             System.out.println("Enemy Rolls " + troll);
-            if (player < troll) {
-                System.out.println("Your attack misses and the troll counters");
-                System.out.println("-3 HP");
-            }
-            else if (player == 1) {
+                if (player < troll) {
+                    System.out.println("Your attack misses and the troll counters");
+                    System.out.println("-3 HP");
+                }
+                else if (player == 1) {
                 System.out.println("you attempt to attack and trip, comically landing on your face");
                 System.out.println("-5 HP");
-            }
-            else if (player == 20) {
+                }
+                else if (player == 20) {
                 System.out.println("You land a critical blow, causing the troll to explode");
                 System.out.println("+ 10XP");
                 System.out.println("+ 05XP (50% Crit XP)");
-            }
-
-
-            else {
+                }
+                else {
                 System.out.println("The troll is cleft in twain!");
                 System.out.println("+ 10XP");
-            }
+                }
 
         }
         else if (action.equalsIgnoreCase("Intimidate")) {
@@ -120,6 +118,7 @@ public class Enemy {
     }
 
     public static void secondInteraction(){
+
 
 
     }

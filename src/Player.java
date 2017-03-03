@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,8 +8,12 @@ public class Player {
     int level;
     int experience;
     public static ArrayList<String> stats = new ArrayList<>();
+    public static List<String> inv = new ArrayList<String>();
 
-
+    public static void inventory(){
+        inv.add("axe");
+        System.out.println(inv);
+    }
 
     public static int roll4(){
         System.out.println("rolling D4");
@@ -68,9 +73,8 @@ public class Player {
         System.out.println("Rolling 3 D6");
         System.out.println(first + " + " + second + " + " + third + " = " + stat);
         return stat;
-
-
     }
+
     public static void intro() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Hello traveler, what is your name?");

@@ -82,6 +82,17 @@ public class Player {
         System.out.println("Welcome " + name + ", let us begin your adventure");
         System.out.println("First we must create your character");
     }
+
+    public static String chooseCharacter(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What class would you like to be?");
+        System.out.println("[Mage/Warrior/Rogue/Priest]");
+        String choice = scanner.nextLine();
+        System.out.println("ahh yes, " + choice + " is a fine choice");
+
+        return choice;
+
+    }
 }
 
 

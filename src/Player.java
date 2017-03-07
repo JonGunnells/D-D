@@ -90,7 +90,7 @@ public class Player {
         String choice = scanner.nextLine();
         System.out.println("ahh yes, " + choice + " is a fine choice");
         if (choice.equalsIgnoreCase("mage")) {
-            System.out.println("");
+            System.out.println("As a mage you bend the elements to your will, your skills are that of magic and power, and those who dare challenge you shall be cast asunder by your awesome might");
         }
         else if (choice.equalsIgnoreCase("warrior")) {
             System.out.println("");

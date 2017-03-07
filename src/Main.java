@@ -18,7 +18,7 @@ public class Main {
 
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         player = loadGame(SAVE_FILE);
         if (player == null) {
             player = new Player();
@@ -37,7 +37,7 @@ public class Main {
         // Player.intro();
         //Enemy.firstInteraction();
         Player.chooseCharacter();
-        Player.inventory();
+        //Player.inventory();
        ///}
     }
 

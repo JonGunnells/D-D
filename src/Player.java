@@ -83,16 +83,35 @@ public class Player {
         System.out.println("First we must create your character");
     }
 
-    public static String chooseCharacter(){
+    public static void chooseCharacter() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("What class would you like to be?");
         System.out.println("[Mage/Warrior/Rogue/Priest]");
         String choice = scanner.nextLine();
         System.out.println("ahh yes, " + choice + " is a fine choice");
+        if (choice.equalsIgnoreCase("mage")) {
+            System.out.println("");
+        }
+        else if (choice.equalsIgnoreCase("warrior")) {
+            System.out.println("");
 
-        return choice;
+        }
+        else if (choice.equalsIgnoreCase("rogue")) {
+            System.out.println("");
+        }
+
+        else if (choice.equalsIgnoreCase("priest")) {
+            System.out.println("");
+        }
+        else {
+            System.out.println("Please Choose an Available Class");
+        }
+
+
 
     }
+
+
 }
 
 

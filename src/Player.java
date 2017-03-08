@@ -90,18 +90,18 @@ public class Player {
         String choice = scanner.nextLine();
         System.out.println("ahh yes, " + choice + " is a fine choice");
         if (choice.equalsIgnoreCase("mage")) {
-            System.out.println("As a mage you bend the elements to your will, your skills are that of magic and power, and those who dare challenge you shall be cast asunder by your awesome might");
+            System.out.println("The mage bends the elements to their will, and those who dare challenge you shall be cast asunder by your awesome might");
         }
         else if (choice.equalsIgnoreCase("warrior")) {
-            System.out.println("");
+            System.out.println("The warrior is always at the head of battle, with your plate armor and heavy weapons no foe can match your strength");
 
         }
         else if (choice.equalsIgnoreCase("rogue")) {
-            System.out.println("");
+            System.out.println("The rogue lives in the shadows, as one you will be no stranger to stealth and there shall be no lock you cant pick nor foe you cant slay");
         }
 
         else if (choice.equalsIgnoreCase("priest")) {
-            System.out.println("");
+            System.out.println("The priest uses holy magic to smite their foes, while using it to heal themselves in battle. Your devotion to the light protects you and destroys all who oppose you ");
         }
         else {
             System.out.println("Please Choose an Available Class");

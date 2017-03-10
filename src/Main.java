@@ -33,7 +33,6 @@ public class Main {
             }
         }
 
-        //while (true) {
         // Player.intro();
         //Enemy.firstInteraction();
         Player.chooseCharacter();

@@ -23,7 +23,6 @@ public class Player {
     }
 
     public static int roll6(){
-        System.out.println("rolling D6");
         Random rand = new Random();
         int number = rand.nextInt(6);
         return number;
@@ -111,8 +110,20 @@ public class Player {
 
     }
 
-    public static void characterSpecs(){
+    public static void rollStrength(){
+        int strength;
+        int dexterity;
+        int perception;
+        int charisma;
         System.out.println("now we are going to roll your stats randomly with diee");
+        System.out.println("Rolling Strength...");
+        int first = roll6();
+        int second = roll6();
+        int third = roll6();
+        int stat = first + second + third;
+        System.out.println(first + " + " + second + " + " + third+ " = " + stat);
+        System.out.println("Strength = " + stat);
+        strength = stat;
     }
 
 

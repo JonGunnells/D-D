@@ -35,7 +35,8 @@ public class Main {
 
         // Player.intro();
         //Enemy.firstInteraction();
-        Player.chooseCharacter();
+        //Player.chooseCharacter();
+        Player.rollStrength();
         //Player.inventory();
        ///}
     }

@@ -33,10 +33,24 @@ public class Main {
             }
         }
 
-        // Player.intro();
+         //Player.intro();
         //Enemy.firstInteraction();
         //Player.chooseCharacter();
+        //System.out.println("Hit ENTER");
+        //scanner.nextLine();
         Player.rollStrength();
+        System.out.println("Hit ENTER");
+        scanner.nextLine();
+        Player.rollCharisma();
+        System.out.println("Hit ENTER");
+        scanner.nextLine();
+        Player.rollDexterity();
+        System.out.println("Hit ENTER");
+        scanner.nextLine();
+        Player.rollPerception();
+        System.out.println("Hit ENTER");
+        scanner.nextLine();
+        Player.printStats();
         //Player.inventory();
        ///}
     }

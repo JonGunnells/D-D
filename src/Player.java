@@ -4,19 +4,23 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Player {
-    int health = 100;
-    int level;
-    int experience;
+    static int health;
+    static int strength;
+    static int dexterity;
+    static int perception;
+    static int charisma;
+    static int level;
+    static int experience;
+
     public static ArrayList<String> stats = new ArrayList<>();
     public static List<String> inv = new ArrayList<String>();
 
     public static void inventory(){
-        inv.add("axe");
+        inv.add("item");
         System.out.println(inv);
     }
 
     public static int roll4(){
-        System.out.println("rolling D4");
         Random rando = new Random();
         int number = rando.nextInt(4);
         return number;
@@ -29,14 +33,12 @@ public class Player {
     }
 
     public static int roll8(){
-        System.out.println("rolling D8");
         Random rand = new Random();
         int number = rand.nextInt(8);
         return number;
     }
 
     public static int roll10(){
-        System.out.println("rolling D10");
         Random rand = new Random();
         int number = rand.nextInt(10);
         return number;
@@ -105,16 +107,10 @@ public class Player {
         else {
             System.out.println("Please Choose an Available Class");
         }
-
-
-
     }
 
-    public static void rollStrength(){
-        int strength;
-        int dexterity;
-        int perception;
-        int charisma;
+
+    public static int rollStrength(){
         System.out.println("now we are going to roll your stats randomly with diee");
         System.out.println("Rolling Strength...");
         int first = roll6();
@@ -124,9 +120,50 @@ public class Player {
         System.out.println(first + " + " + second + " + " + third+ " = " + stat);
         System.out.println("Strength = " + stat);
         strength = stat;
+        return strength;
     }
 
+    public static int rollDexterity(){
+        System.out.println("Rolling Dexterity...");
+        int first = roll6();
+        int second = roll6();
+        int third = roll6();
+        int stat = first + second + third;
+        System.out.println(first + " + " + second + " + " + third+ " = " + stat);
+        System.out.println("Dexterity = " + stat);
+        dexterity = stat;
+        return dexterity;
+    }
 
+    public static int rollPerception(){
+        System.out.println("Rolling Perception...");
+        int first = roll6();
+        int second = roll6();
+        int third = roll6();
+        int stat = first + second + third;
+        System.out.println(first + " + " + second + " + " + third+ " = " + stat);
+        System.out.println("Perception = " + stat);
+        perception = stat;
+        return perception;
+    }
+    public static int rollCharisma(){
+        System.out.println("Rolling Charisma...");
+        int first = roll6();
+        int second = roll6();
+        int third = roll6();
+        int stat = first + second + third;
+        System.out.println(first + " + " + second + " + " + third+ " = " + stat);
+        System.out.println("Charistma = " + stat);
+        charisma = stat;
+        return charisma;
+    }
+
+    public static void printStats(){
+        System.out.println("Strength = " + strength);
+        System.out.println("Dexterity = " + dexterity);
+        System.out.println("Perception = " + perception);
+        System.out.println("Charisma = " + charisma);
+    }
 }
 
 

@@ -3,46 +3,6 @@ import java.util.Scanner;
 
 public class Enemy {
 
-    public static int enRoll4(){
-        Random rando = new Random();
-        int number = rando.nextInt(4);
-        return number;
-    }
-
-    public static int enRoll6(){
-        Random rand = new Random();
-        int number = rand.nextInt(6);
-        return number;
-
-    }
-
-    public static int enRoll8(){
-        Random rand = new Random();
-        int number = rand.nextInt(8);
-        return number;
-
-    }
-
-    public static int enRoll10(){
-        Random rand = new Random();
-        int number = rand.nextInt(10);
-        return number;
-
-
-    }
-
-    public static int enRoll12(){
-        Random rand = new Random();
-        int number = rand.nextInt(12);
-
-        return number;
-    }
-
-    public static int enRoll20(){
-        Random rand = new Random();
-        int number = rand.nextInt(20);
-        return number;
-    }
 
     public static void firstInteraction(){
         Scanner scanner = new Scanner(System.in);
@@ -55,7 +15,7 @@ public class Enemy {
             System.out.println("you attempt to run, rolling your odds...");
             int player = Player.roll20();
             System.out.println("Player rolls " + player);
-            int troll= enRoll20();
+            int troll= Player.roll20();
             System.out.println("Enemy rolls " + troll);
             if (player < troll) {
                 System.out.println("you fail your dexterity check and you trip and fall attempting to run away");
@@ -69,7 +29,7 @@ public class Enemy {
             System.out.println("you attempt to fight the troll, rolling your odds...");
             int player = Player.roll20();
             System.out.println("player rolls " + player);
-            int troll = enRoll20();
+            int troll = Player.roll20();
             System.out.println("Enemy Rolls " + troll);
                 if (player < troll) {
                     System.out.println("Your attack misses and the troll counters");
@@ -94,7 +54,7 @@ public class Enemy {
             System.out.println("you attempt to intimidate the troll, rolling your odds...");
             int player = Player.roll20();
             System.out.println("Player rolls " + player);
-            int troll = enRoll20();
+            int troll = Player.roll20();
             System.out.println("Enemy rolls " + troll);
             if (player < troll ) {
                 System.out.println("The troll is not phased by your intimidation attempt");
@@ -113,14 +73,6 @@ public class Enemy {
                 System.out.println("+ 10XP");
             }
         }
-
-
-    }
-
-    public static void secondInteraction(){
-
-
-
 
 
     }

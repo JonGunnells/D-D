@@ -111,6 +111,10 @@ public class Player {
 
     }
 
+    public static void characterSpecs(){
+        System.out.println("now we are going to roll your stats randomly with diee");
+    }
+
 
 }
 

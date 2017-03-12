@@ -22,22 +22,23 @@ public class Main {
         player = loadGame(SAVE_FILE);
         if (player == null) {
             player = new Player();
-            System.out.println("Starting new game.");
+            System.out.println("Starting new game...");
         }
         else {
-            System.out.println("Found save file.");
-            System.out.println("Start new game instead? [y/n]");
+            System.out.println("Found save file...");
+            System.out.println("Start new game instead? [Y/N]");
             String answer = scanner.nextLine();
             if (answer.equalsIgnoreCase("y")) {
                 player = new Player();
             }
         }
 
-         //Player.intro();
-        //Enemy.firstInteraction();
-        //Player.chooseCharacter();
-        //System.out.println("Hit ENTER");
-        //scanner.nextLine();
+         Player.intro();
+        Player.chooseRace();
+        System.out.println("Hit ENTER");
+        Player.chooseClass();
+        System.out.println("Hit ENTER");
+        scanner.nextLine();
         Player.rollStrength();
         System.out.println("Hit ENTER");
         scanner.nextLine();
@@ -50,7 +51,10 @@ public class Main {
         Player.rollPerception();
         System.out.println("Hit ENTER");
         scanner.nextLine();
-        Player.printStats();
+        Player.printCharacter();
+        System.out.println("Hit ENTER");
+        scanner.nextLine();
+        Enemy.firstInteraction();
         //Player.inventory();
        ///}
     }

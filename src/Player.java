@@ -4,6 +4,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Player {
+    static String specialization;
+    static String race;
     static int health;
     static int strength;
     static int dexterity;
@@ -28,7 +30,7 @@ public class Player {
 
     public static int roll6(){
         Random rand = new Random();
-        int number = rand.nextInt(6);
+        int number = rand.nextInt(5) + 1;
         return number;
     }
 
@@ -76,42 +78,68 @@ public class Player {
         return stat;
     }
 
+    private static void prologue(){
+        System.out.println("Hello, and thank you");
+        System.out.println("This game is a text-based adventure that uses virtual dice rolls to decide the outcomes ");
+        System.out.println("of various interactions that happen to your character. There are 6 different dice that will ");
+        System.out.println("be rolled depending on the situation. As you complete puzzles and fight enemies you will gain experience ");
+        System.out.println("that will level up your character. At any time you can press _______ to bring up your stats and inventory. ");
+        System.out.println("Now prepare to enter the realm of ________. ");
+        System.out.println("Before you lies great adventure to be had, and great treasure to claim.");
+    }
+
     public static void intro() {
-        Scanner scan = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Is this your first time playing? [Y/N]");
+        String answer = scanner.nextLine();
+        if (answer.equalsIgnoreCase("y")) {
+            prologue();
+        }
         System.out.println("Hello traveler, what is your name?");
-        String name = scan.nextLine();
+        String name = scanner.nextLine();
         System.out.println("Welcome " + name + ", let us begin your adventure");
         System.out.println("First we must create your character");
     }
 
-    public static void chooseCharacter() {
+    public static String chooseClass() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("What class would you like to be?");
         System.out.println("[Mage/Warrior/Rogue/Priest]");
-        String choice = scanner.nextLine();
-        System.out.println("ahh yes, " + choice + " is a fine choice");
-        if (choice.equalsIgnoreCase("mage")) {
+        specialization = scanner.nextLine();
+        System.out.println("Ahh yes, " + specialization + " is a fine choice");
+        if (specialization.equalsIgnoreCase("mage")) {
             System.out.println("The mage bends the elements to their will, and those who dare challenge you shall be cast asunder by your awesome might");
         }
-        else if (choice.equalsIgnoreCase("warrior")) {
+        else if (specialization.equalsIgnoreCase("warrior")) {
             System.out.println("The warrior is always at the head of battle, with your plate armor and heavy weapons no foe can match your strength");
 
         }
-        else if (choice.equalsIgnoreCase("rogue")) {
+        else if (specialization.equalsIgnoreCase("rogue")) {
             System.out.println("The rogue lives in the shadows, as one you will be no stranger to stealth and there shall be no lock you cant pick nor foe you cant slay");
         }
 
-        else if (choice.equalsIgnoreCase("priest")) {
+        else if (specialization.equalsIgnoreCase("priest")) {
             System.out.println("The priest uses holy magic to smite their foes, while using it to heal themselves in battle. Your devotion to the light protects you and destroys all who oppose you ");
         }
         else {
             System.out.println("Please Choose an Available Class");
         }
+        return specialization;
+    }
+    public static String chooseRace(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Now choose your race");
+        System.out.println("[Human/Orc/Dwarf/Elf]");
+        race = scanner.nextLine();
+        return race;
+
+
     }
 
 
     public static int rollStrength(){
-        System.out.println("now we are going to roll your stats randomly with diee");
+        System.out.println("now we are going to roll your stats randomly with dice");
+        System.out.println("we will roll 3 6-sided die and the sum will be your stat");
         System.out.println("Rolling Strength...");
         int first = roll6();
         int second = roll6();
@@ -153,17 +181,21 @@ public class Player {
         int third = roll6();
         int stat = first + second + third;
         System.out.println(first + " + " + second + " + " + third+ " = " + stat);
-        System.out.println("Charistma = " + stat);
+        System.out.println("Charisma = " + stat);
         charisma = stat;
         return charisma;
     }
 
-    public static void printStats(){
-        System.out.println("Strength = " + strength);
-        System.out.println("Dexterity = " + dexterity);
-        System.out.println("Perception = " + perception);
-        System.out.println("Charisma = " + charisma);
+    public static void printCharacter(){
+        System.out.println("Here is an overview of your character");
+        System.out.println("Race: " + race);
+        System.out.println("Class: " + specialization);
+        System.out.println("Strength: " + strength);
+        System.out.println("Dexterity: " + dexterity);
+        System.out.println("Perception: " + perception);
+        System.out.println("Charisma: " + charisma);
     }
+
 }
 
 

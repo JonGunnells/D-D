@@ -145,7 +145,7 @@ public class Player {
         int second = roll6();
         int third = roll6();
         int stat = first + second + third;
-        System.out.println(first + " + " + second + " + " + third+ " = " + stat);
+        System.out.println(first + " + " + second + " + " + third + " = " + stat);
         System.out.println("Strength = " + stat);
         strength = stat;
         return strength;
@@ -156,8 +156,8 @@ public class Player {
         int first = roll6();
         int second = roll6();
         int third = roll6();
-        int stat = first + second + third;
-        System.out.println(first + " + " + second + " + " + third+ " = " + stat);
+        int stat = first + second + third + strength;
+        System.out.println(first + " + " + second + " + " + third  + " = " + stat);
         System.out.println("Dexterity = " + stat);
         dexterity = stat;
         return dexterity;
@@ -169,7 +169,7 @@ public class Player {
         int second = roll6();
         int third = roll6();
         int stat = first + second + third;
-        System.out.println(first + " + " + second + " + " + third+ " = " + stat);
+        System.out.println(first + " + " + second + " + " + third +  " = " + stat);
         System.out.println("Perception = " + stat);
         perception = stat;
         return perception;

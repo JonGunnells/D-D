@@ -54,9 +54,11 @@ public class Main {
         Player.printCharacter();
         System.out.println("Hit ENTER");
         scanner.nextLine();
-        Enemy.firstInteraction();
-        //Player.inventory();
-       ///}
+        while(true) {
+            Enemy.firstInteraction();
+            Player.inventory();
+        }
+
     }
 
     public static Player loadGame(String filename) {

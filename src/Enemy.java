@@ -13,8 +13,8 @@ public class Enemy {
 
         if (action.equalsIgnoreCase("run")) {
             System.out.println("you attempt to run, rolling your odds...");
-            int player = Player.roll20();
-            System.out.println("Player rolls " + player);
+            int player = Player.roll20() + Player.dexterity;
+            System.out.println("Player rolls " + player + Player.dexterity);
             int troll= Player.roll20();
             System.out.println("Enemy rolls " + troll);
             if (player < troll) {
@@ -27,8 +27,8 @@ public class Enemy {
         }
         else if (action.equalsIgnoreCase("fight")) {
             System.out.println("you attempt to fight the troll, rolling your odds...");
-            int player = Player.roll20();
-            System.out.println("player rolls " + player);
+            int player = Player.roll20() + Player.strength;
+            System.out.println("player rolls " + player + Player.strength);
             int troll = Player.roll20();
             System.out.println("Enemy Rolls " + troll);
                 if (player < troll) {
@@ -52,8 +52,8 @@ public class Enemy {
         }
         else if (action.equalsIgnoreCase("Intimidate")) {
             System.out.println("you attempt to intimidate the troll, rolling your odds...");
-            int player = Player.roll20();
-            System.out.println("Player rolls " + player);
+            int player = Player.roll20()+ Player.charisma;
+            System.out.println("Player rolls " + player + Player.charisma);
             int troll = Player.roll20();
             System.out.println("Enemy rolls " + troll);
             if (player < troll ) {

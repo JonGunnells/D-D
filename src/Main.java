@@ -16,15 +16,12 @@ public class Main {
     static Player player;
 
 
-
-
-    public static void main(String[] args){
+    public static void main(String[] args) {
         player = loadGame(SAVE_FILE);
         if (player == null) {
             player = new Player();
             System.out.println("Starting new game...");
-        }
-        else {
+        } else {
             System.out.println("Found save file...");
             System.out.println("Start new game instead? [Y/N]");
             String answer = scanner.nextLine();
@@ -32,34 +29,33 @@ public class Main {
                 player = new Player();
             }
         }
-
-         Player.intro();
-        Player.chooseRace();
-        System.out.println("Hit ENTER");
-        Player.chooseClass();
-        System.out.println("Hit ENTER");
-        scanner.nextLine();
-        Player.rollStrength();
-        System.out.println("Hit ENTER");
-        scanner.nextLine();
-        Player.rollCharisma();
-        System.out.println("Hit ENTER");
-        scanner.nextLine();
-        Player.rollDexterity();
-        System.out.println("Hit ENTER");
-        scanner.nextLine();
-        Player.rollPerception();
-        System.out.println("Hit ENTER");
-        scanner.nextLine();
-        Player.printCharacter();
-        System.out.println("Hit ENTER");
-        scanner.nextLine();
-        while(true) {
+        while (true) {
+            Player.intro();
+            Player.chooseRace();
+            Player.chooseClass();
+            System.out.println("Hit ENTER");
+            scanner.nextLine();
+            Player.rollStrength();
+            System.out.println("Hit ENTER");
+            scanner.nextLine();
+            Player.rollCharisma();
+            System.out.println("Hit ENTER");
+            scanner.nextLine();
+            Player.rollDexterity();
+            System.out.println("Hit ENTER");
+            scanner.nextLine();
+            Player.rollPerception();
+            System.out.println("Hit ENTER");
+            scanner.nextLine();
+            Player.printCharacter();
+            System.out.println("Hit ENTER");
+            scanner.nextLine();
             Enemy.firstInteraction();
-            Player.inventory();
         }
-
     }
+
+
+
 
     public static Player loadGame(String filename) {
         File f = new File(filename);

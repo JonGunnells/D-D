@@ -77,4 +77,8 @@ public class Enemy {
 
     }
 
+    public static void secondInteraction(){
+
+    }
+
 }

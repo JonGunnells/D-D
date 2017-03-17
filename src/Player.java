@@ -126,14 +126,30 @@ public class Player {
         }
         return specialization;
     }
+
     public static String chooseRace(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Now choose your race");
+        System.out.println("Choose your race");
         System.out.println("[Human/Orc/Dwarf/Elf]");
         race = scanner.nextLine();
+        if(race.equalsIgnoreCase("Human")) {
+            //add stat
+        }
+        else if(race.equalsIgnoreCase("Orc")) {
+            //add stat
+        }
+        else if (race.equalsIgnoreCase("Dwarf")) {
+            //add stat
+        }
+        else if (race.equalsIgnoreCase("Elf")) {
+            //add stat
+        }
+        else {
+            System.out.println("Please choose a valid class");
+
+        }
+
         return race;
-
-
     }
 
 

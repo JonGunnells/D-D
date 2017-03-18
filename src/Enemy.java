@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class Enemy {
 
-
     public static void firstInteraction(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("A large troll approaches you, he is at least a foot taller than you.");
@@ -25,6 +24,7 @@ public class Enemy {
             }
 
         }
+
         else if (action.equalsIgnoreCase("fight")) {
             System.out.println("you attempt to fight the troll, rolling your odds...");
             int player = Player.roll20() + Player.strength;
@@ -48,8 +48,8 @@ public class Enemy {
                 System.out.println("The troll is cleft in twain!");
                 System.out.println("+ 10XP");
                 }
-
         }
+
         else if (action.equalsIgnoreCase("Intimidate")) {
             System.out.println("you attempt to intimidate the troll, rolling your odds...");
             int player = Player.roll20()+ Player.charisma;
@@ -73,12 +73,9 @@ public class Enemy {
                 System.out.println("+ 10XP");
             }
         }
-
-
     }
 
     public static void secondInteraction(){
 
     }
-
 }

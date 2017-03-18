@@ -13,6 +13,7 @@ public class Player {
     static int charisma;
     static int level;
     static int experience;
+    static int buff;
 
     public static ArrayList<String> stats = new ArrayList<>();
     public static List<String> inv = new ArrayList<String>();
@@ -44,7 +45,6 @@ public class Player {
         Random rand = new Random();
         int number = rand.nextInt(10);
         return number;
-
     }
 
     public static int roll12(){
@@ -148,7 +148,6 @@ public class Player {
             System.out.println("Please choose a valid class");
 
         }
-
         return race;
     }
 
@@ -190,6 +189,7 @@ public class Player {
         perception = stat;
         return perception;
     }
+
     public static int rollCharisma(){
         System.out.println("Rolling Charisma...");
         int first = roll6();

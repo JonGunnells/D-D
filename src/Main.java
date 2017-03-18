@@ -15,13 +15,13 @@ public class Main {
     static final String SAVE_FILE = "game.json";
     static Player player;
 
-
     public static void main(String[] args) {
         player = loadGame(SAVE_FILE);
         if (player == null) {
             player = new Player();
             System.out.println("Starting new game...");
-        } else {
+        }
+        else {
             System.out.println("Found save file...");
             System.out.println("Start new game instead? [Y/N]");
             String answer = scanner.nextLine();
@@ -29,6 +29,7 @@ public class Main {
                 player = new Player();
             }
         }
+
         while (true) {
             Player.intro();
             Player.chooseRace();

@@ -86,6 +86,7 @@ public class Player {
         System.out.println("that will level up your character. At any time you can press _______ to bring up your stats and inventory. ");
         System.out.println("Now prepare to enter the realm of ________. ");
         System.out.println("Before you lies great adventure to be had, and great treasure to claim.");
+        System.out.println("");
     }
 
     public static void intro() {
@@ -155,6 +156,8 @@ public class Player {
     public static int rollStrength(){
         System.out.println("now we are going to roll your stats randomly with dice");
         System.out.println("we will roll 3 6-sided die and the sum will be your stat");
+        System.out.println("Hit ENTER");
+        Main.scanner.nextLine();
         System.out.println("Rolling Strength...");
         int first = roll6();
         int second = roll6();

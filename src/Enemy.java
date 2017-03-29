@@ -81,7 +81,9 @@ public class Enemy {
         System.out.println("what would you like to do?");
         String action = Main.scanner.nextLine();
         if (action.contains("examine")) {
-            //something happens
+            System.out.println("You look closer at the door and notice a small ");
+
+
 
         }
     }

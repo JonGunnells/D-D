@@ -16,16 +16,7 @@ public class Main {
     static Player player;
 
     public static void main(String[] args) {
-        Puzzle.zero();
-        //Puzzle.one();
-        //Puzzle.two();
-        //Puzzle.three();
-//        Puzzle.four();
-//        Puzzle.five();
-//        Puzzle.six();
-//        Puzzle.seven();
-//        Puzzle.eight();
-//        Puzzle.nine();
+
         player = loadGame(SAVE_FILE);
         if (player == null) {
             player = new Player();

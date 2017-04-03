@@ -91,6 +91,7 @@ public class Player {
     }
 
     public static void chars(){
+        System.out.println("");
         System.out.println("Human: +3 to Dexterity roll");
         System.out.println("Orc: + 3 to Strength roll");
         System.out.println("Dwarf: +3 to Charisma roll");

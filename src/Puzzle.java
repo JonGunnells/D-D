@@ -9,9 +9,10 @@ public class Puzzle {
                 "\\ |_/ /\n" +
                 " \\___/ \n" +
                 "       ");
+
     }
     public static void one(){
-        System.out.println("__  \n" +
+        System.out.println(" __  \n" +
                 "/  | \n" +
                 "`| | \n" +
                 " | | \n" +
@@ -99,5 +100,19 @@ public class Puzzle {
                 ".___/ /\n" +
                 "\\____/ \n" +
                 "       ");
+    }
+
+    public static void up(){
+        System.out.println(
+                 "     .\n" +
+                "   .:;:.\n" +
+                " .:;;;;;:.\n" +
+                "   ;;;;;\n" +
+                "   ;;;;;\n" +
+                "   ;;;;;");
+    }
+
+    public static void down(){
+        System.out.println();
     }
 }

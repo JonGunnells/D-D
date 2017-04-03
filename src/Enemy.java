@@ -34,10 +34,14 @@ public class Enemy {
                 if (player < troll) {
                     System.out.println("Your attack misses and the troll counters");
                     System.out.println("-3 HP");
+                    Player.health -= 3;
+                    System.out.println("Health: " + Player.health);
                 }
                 else if (player == 1) {
                 System.out.println("you attempt to attack and trip, comically landing on your face");
                 System.out.println("-5 HP");
+                    Player.health -=5;
+                    System.out.println("Health: " + Player.health);
                 }
                 else if (player == 20) {
                 System.out.println("You land a critical blow, causing the troll to explode");
@@ -83,8 +87,11 @@ public class Enemy {
         if (action.contains("examine")) {
             System.out.println("You look closer at the door and notice a small ");
 
-
+        }
+        else if (action.contains("")) {
 
         }
     }
+
+
 }

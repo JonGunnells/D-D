@@ -4,9 +4,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Player {
+    static boolean first;
     static String specialization;
     static String race;
-    static int health;
+    static int health = 100;
     static int strength;
     static int dexterity;
     static int perception;
@@ -89,12 +90,20 @@ public class Player {
         System.out.println("");
     }
 
+    public static void chars(){
+        System.out.println("Human: +3 to Dexterity roll");
+        System.out.println("Orc: + 3 to Strength roll");
+        System.out.println("Dwarf: +3 to Charisma roll");
+        System.out.println("Elf: + 3 to Perception roll");
+    }
+
     public static void intro() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Is this your first time playing? [Y/N]");
         String answer = scanner.nextLine();
         if (answer.equalsIgnoreCase("y")) {
             prologue();
+            Player.first = true;
         }
         System.out.println("Hello traveler, what is your name?");
         String name = scanner.nextLine();
@@ -132,9 +141,11 @@ public class Player {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose your race");
         System.out.println("[Human/Orc/Dwarf/Elf]");
+        if (Player.first = true) {
+            Player.chars();
+        }
         race = scanner.nextLine();
         if(race.equalsIgnoreCase("Human")) {
-            //add stat
         }
         else if(race.equalsIgnoreCase("Orc")) {
             //add stat
@@ -207,8 +218,21 @@ public class Player {
 
     public static void printCharacter(){
         System.out.println("Here is an overview of your character");
+        if (Player.race.equalsIgnoreCase("Human")) {
+            Player.dexterity += 3;
+        }
+        else if(Player.race.equalsIgnoreCase("Orc")) {
+            Player.strength += 3;
+        }
+        else if(Player.race.equalsIgnoreCase("Dwarf")) {
+            Player.charisma += 3;
+        }
+        else if(Player.race.equalsIgnoreCase("Elf")) {
+            Player.perception += 3;
+        }
         System.out.println("Race: " + race);
         System.out.println("Class: " + specialization);
+        System.out.println("Health: " + health);
         System.out.println("Strength: " + strength);
         System.out.println("Dexterity: " + dexterity);
         System.out.println("Perception: " + perception);

@@ -68,16 +68,16 @@ public class Player {
         return number;
     }
 
-    public static int rollStat(){
-        Random rand = new Random();
-        int first = rand.nextInt(6);
-        int second = rand.nextInt(6);
-        int third = rand.nextInt(6);
-        int stat = first + second + third;
-        System.out.println("Rolling 3 D6");
-        System.out.println(first + " + " + second + " + " + third + " = " + stat);
-        return stat;
-    }
+//    public static int rollStat(){
+//        Random rand = new Random();
+//        int first = rand.nextInt(6);
+//        int second = rand.nextInt(6);
+//        int third = rand.nextInt(6);
+//        int stat = first + second + third;
+//        System.out.println("Rolling 3 D6");
+//        System.out.println(first + " + " + second + " + " + third + " = " + stat);
+//        return stat;
+//    }
 
     private static void prologue(){
         System.out.println("Hello, and thank you");
@@ -175,7 +175,7 @@ public class Player {
         int second = roll6();
         int third = roll6();
         int stat = first + second + third;
-        System.out.println(first + " + " + second + " + " + third + " = " + stat);
+        System.out.println(first + " + " + second + " + " + third);
         System.out.println("Strength = " + stat);
         strength = stat;
         return strength;
@@ -187,7 +187,7 @@ public class Player {
         int second = roll6();
         int third = roll6();
         int stat = first + second + third;
-        System.out.println(first + " + " + second + " + " + third  + " = " + stat);
+        System.out.println(first + " + " + second + " + " + third);
         System.out.println("Dexterity = " + stat);
         dexterity = stat;
         return dexterity;
@@ -199,7 +199,7 @@ public class Player {
         int second = roll6();
         int third = roll6();
         int stat = first + second + third;
-        System.out.println(first + " + " + second + " + " + third +  " = " + stat);
+        System.out.println(first + " + " + second + " + " + third);
         System.out.println("Perception = " + stat);
         perception = stat;
         return perception;
@@ -211,7 +211,7 @@ public class Player {
         int second = roll6();
         int third = roll6();
         int stat = first + second + third;
-        System.out.println(first + " + " + second + " + " + third + " = " + stat);
+        System.out.println(first + " + " + second + " + " + third);
         System.out.println("Charisma = " + stat);
         charisma = stat;
         return charisma;

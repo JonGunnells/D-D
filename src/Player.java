@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Player {
-    static boolean first;
+    static boolean first = false;
     static String specialization;
     static String race;
     static int health = 100;
@@ -103,8 +103,9 @@ public class Player {
         System.out.println("Is this your first time playing? [Y/N]");
         String answer = scanner.nextLine();
         if (answer.equalsIgnoreCase("y")) {
-            prologue();
             Player.first = true;
+            prologue();
+
         }
         System.out.println("Hello traveler, what is your name?");
         String name = scanner.nextLine();
@@ -142,7 +143,7 @@ public class Player {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose your race");
         System.out.println("[Human/Orc/Dwarf/Elf]");
-        if (Player.first = true) {
+        if (Player.first == true) {
             Player.chars();
         }
         race = scanner.nextLine();
@@ -238,6 +239,12 @@ public class Player {
         System.out.println("Dexterity: " + dexterity);
         System.out.println("Perception: " + perception);
         System.out.println("Charisma: " + charisma);
+    }
+
+    public static void beginning(){
+
+
+
     }
 
 }

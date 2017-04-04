@@ -17,8 +17,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-
         player = loadGame(SAVE_FILE);
         if (player == null) {
             player = new Player();
@@ -35,26 +33,35 @@ public class Main {
 
         while (true) {
             Player.intro();
+
             Player.chooseRace();
+
             Player.chooseClass();
             System.out.println("Hit ENTER");
             scanner.nextLine();
+
             Player.rollStrength();
             System.out.println("Hit ENTER");
             scanner.nextLine();
+
             Player.rollCharisma();
             System.out.println("Hit ENTER");
             scanner.nextLine();
+
             Player.rollDexterity();
             System.out.println("Hit ENTER");
             scanner.nextLine();
+
             Player.rollPerception();
             System.out.println("Hit ENTER");
             scanner.nextLine();
+
             Player.printCharacter();
             System.out.println("Hit ENTER");
             scanner.nextLine();
+
             Enemy.firstInteraction();
+
         }
     }
 

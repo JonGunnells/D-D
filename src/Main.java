@@ -31,7 +31,6 @@ public class Main {
             }
         }
 
-        while (true) {
             Player.intro();
 
             Player.chooseRace();
@@ -60,10 +59,14 @@ public class Main {
             System.out.println("Hit ENTER");
             scanner.nextLine();
 
-            Enemy.firstInteraction();
+            Player.beginning();
+            Player.inventory();
+            Player.printCharacter();
+
+            //Enemy.firstInteraction();
 
         }
-    }
+
 
 
 

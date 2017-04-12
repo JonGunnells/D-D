@@ -1,3 +1,5 @@
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -15,12 +17,12 @@ public class Player {
     static int level;
     static int experience;
     static int buff;
+    static int gold;
 
     public static ArrayList<String> stats = new ArrayList<>();
     public static List<String> inv = new ArrayList<String>();
 
     public static void inventory(){
-        inv.add("item");
         System.out.println(inv);
     }
 
@@ -232,6 +234,7 @@ public class Player {
         else if(Player.race.equalsIgnoreCase("Elf")) {
             Player.perception += 3;
         }
+        System.out.println("Level: " + level);
         System.out.println("Race: " + race);
         System.out.println("Class: " + specialization);
         System.out.println("Health: " + health);
@@ -239,15 +242,29 @@ public class Player {
         System.out.println("Dexterity: " + dexterity);
         System.out.println("Perception: " + perception);
         System.out.println("Charisma: " + charisma);
+        System.out.println("Gold: " + gold);
     }
 
-    public static void beginning(){
+    public static void beginning() {
+        System.out.println("You awake, above you you see the wide open blue sky. You hear the sound of water sloshing around you, you sit up and see you are on a raft ");
+        System.out.println("Your head is fuzzy, your lips are chapped from lying in the sun. You scan the small raft and find a small satchel that has been nailed to one of the logs");
+        System.out.println("You have no idea where you are or how you got here, but you do know that night will be here soon, and that is not a good time to be on a raft.");
+        System.out.println("");
+        System.out.println("What would you like to do?");
+        String action = Main.scanner.nextLine();
+        if (action.contains("bag")) {
+            System.out.println("You open the bag and find 10 GOLD COINS, a HEALTH POTION, and a note that reads 'This should get you there -M'");
+            gold += 5;
+            inv.add("Health Potion");
 
 
+        }
 
     }
 
 }
+
+
 
 
 

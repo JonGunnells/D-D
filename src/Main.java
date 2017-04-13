@@ -60,8 +60,9 @@ public class Main {
             scanner.nextLine();
 
             Player.beginning();
-            Player.inventory();
-            Player.printCharacter();
+            Player.raft();
+            Player.chapter2();
+
 
             //Enemy.firstInteraction();
 

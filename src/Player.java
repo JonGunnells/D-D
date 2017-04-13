@@ -242,23 +242,43 @@ public class Player {
         System.out.println("Dexterity: " + dexterity);
         System.out.println("Perception: " + perception);
         System.out.println("Charisma: " + charisma);
-        System.out.println("Gold: " + gold);
     }
 
     public static void beginning() {
         System.out.println("You awake, above you you see the wide open blue sky. You hear the sound of water sloshing around you, you sit up and see you are on a raft ");
-        System.out.println("Your head is fuzzy, your lips are chapped from lying in the sun. You scan the small raft and find a small satchel that has been nailed to one of the logs");
+        System.out.println("Your head is fuzzy, your lips are chapped from lying in the sun. You scan the raft and find a small satchel that has been nailed to one of the logs");
         System.out.println("You have no idea where you are or how you got here, but you do know that night will be here soon, and that is not a good time to be on a raft.");
         System.out.println("");
         System.out.println("What would you like to do?");
-        String action = Main.scanner.nextLine();
-        if (action.contains("bag")) {
-            System.out.println("You open the bag and find 10 GOLD COINS, a HEALTH POTION, and a note that reads 'This should get you there -M'");
-            gold += 5;
-            inv.add("Health Potion");
+        while (true){
+            String action = Main.scanner.nextLine();
 
+            if (action.contains("bag")) {
+            System.out.println("You open the bag and find 10 GOLD COINS, a HEALTH POTION, and a note that reads 'This should get you there -M'");
+            gold += 10;
+            inv.add("Health Potion");
+            break;
+        }
+            else {
+            System.out.println("Not valid action try something else");
 
         }
+
+        }
+
+    }
+
+    public static void raft(){
+        System.out.println("You look up in the sky and see clouds start to head towards you, you can hear thunder in the distance");
+        System.out.println("The wind starts to pick up, you feel a chill as the sun fades and the sky darkens");
+        System.out.println("Suddenly you hear a monsterous roar, you turn around and see a rogue wave towering over you");
+        System.out.println("You black out.");
+
+    }
+
+    public static void chapter2(){
+        System.out.println("");
+        System.out.println("CHAPTER 2");
 
     }
 

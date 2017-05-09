@@ -260,11 +260,12 @@ public class Player {
             break;
         }
             else {
-            System.out.println("Not valid action try something else");
+            System.out.println("Try something else");
 
         }
 
         }
+        System.out.println("");
 
     }
 
@@ -272,7 +273,7 @@ public class Player {
         System.out.println("You look up in the sky and see clouds start to head towards you, you can hear thunder in the distance");
         System.out.println("The wind starts to pick up, you feel a chill as the sun fades and the sky darkens");
         System.out.println("Suddenly you hear a monstrous roar, you turn around and see a rogue wave towering over you");
-        System.out.println("You black out.");
+        System.out.println("You black out");
 
     }
 
@@ -281,7 +282,20 @@ public class Player {
         System.out.println("CHAPTER 2");
         System.out.println("You wake up once more, this time on land. You look around you and notice you are on a beach");
         System.out.println("The wreckage of your raft lies behind you.");
-        System.out.println("");
+        System.out.println("What would you like to do?");
+        while(true) {
+            String action = Main.scanner.nextLine();
+            if (action.contains("look")) {
+                break;
+
+            }
+            else if (action.contains("")) {
+
+            }
+
+
+        }
+
 
     }
 

@@ -61,7 +61,7 @@ public class Main {
 
             Player.beginning();
             Player.raft();
-            Player.chapter2();
+            //Player.chapter2();
 
 
             //Enemy.firstInteraction();

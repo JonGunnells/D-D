@@ -104,7 +104,7 @@ public class Puzzle {
 
     public static void up(){
         System.out.println(
-                 "     .\n" +
+                 "    .\n" +
                 "   .:;:.\n" +
                 " .:;;;;;:.\n" +
                 "   ;;;;;\n" +

@@ -14,7 +14,7 @@ public class Player {
     static int dexterity;
     static int perception;
     static int charisma;
-    static int level;
+    static int level = 1;
     static int experience;
     static int buff;
     static int gold;
@@ -69,6 +69,8 @@ public class Player {
         }
         return number;
     }
+
+
 
 //    public static int rollStat(){
 //        Random rand = new Random();
@@ -254,9 +256,10 @@ public class Player {
             String action = Main.scanner.nextLine();
 
             if (action.contains("bag")) {
-            System.out.println("You open the bag and find 10 GOLD COINS, a HEALTH POTION, and a note that reads 'This should get you there -M'");
+            System.out.println("You open the bag and find 10 GOLD COINS, a Compass, and a note that reads 'This should get you there -M'");
             gold += 10;
-            inv.add("Health Potion");
+            inv.add("Compass");
+            inv.add("Note From -M");
             break;
         }
             else {
@@ -273,31 +276,11 @@ public class Player {
         System.out.println("You look up in the sky and see clouds start to head towards you, you can hear thunder in the distance");
         System.out.println("The wind starts to pick up, you feel a chill as the sun fades and the sky darkens");
         System.out.println("Suddenly you hear a monstrous roar, you turn around and see a rogue wave towering over you");
-        System.out.println("You black out");
-
-    }
-
-    public static void chapter2(){
-        System.out.println("");
-        System.out.println("CHAPTER 2");
-        System.out.println("You wake up once more, this time on land. You look around you and notice you are on a beach");
-        System.out.println("The wreckage of your raft lies behind you.");
-        System.out.println("What would you like to do?");
-        while(true) {
-            String action = Main.scanner.nextLine();
-            if (action.contains("look")) {
-                break;
-
-            }
-            else if (action.contains("")) {
-
-            }
-
-
-        }
 
 
     }
+
+
 
 }
 

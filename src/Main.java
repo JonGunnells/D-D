@@ -68,6 +68,22 @@ public class Main {
 
         }
 
+    public static String nextLine() {
+        String line = scanner.nextLine();
+        while (line.startsWith("/")) {
+            if (line.equals("/inv")) {
+                Player.inventory();
+
+            }
+            else {
+                System.out.println("Command not found.");
+            }
+
+            line = scanner.nextLine();
+        }
+        return line;
+    }
+
 
 
 

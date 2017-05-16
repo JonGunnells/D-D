@@ -276,8 +276,63 @@ public class Player {
         System.out.println("You look up in the sky and see clouds start to head towards you, you can hear thunder in the distance");
         System.out.println("The wind starts to pick up, you feel a chill as the sun fades and the sky darkens");
         System.out.println("Suddenly you hear a monstrous roar, you turn around and see a rogue wave towering over you");
+        System.out.println("The wave lifts you up and hurls you across the sea, you eventually land on a sandy beach");
+        System.out.println("in the Distance you can see a tower of smoke through a thick jungle of palm trees");
+        while(true) {
+            System.out.println("what would you like to do?");
+            String action = Main.scanner.nextLine();
+            if (action.contains("smoke")) {
+                break;
+
+            }
+            else {
+                System.out.println("Try Something Else");
+            }
+
+        }
+        System.out.println("You walk through the brush and trees toward the smoke");
+        System.out.println("you see a hooded figure with its back to you, their hands hovering over the fire");
+        System.out.println("What would you like to do?");
+        System.out.println("[1] Approach the figure and introduce yourself (Charisma)");
+        System.out.println("[2] Attempt a sneak attack (Dexterity)");
+        System.out.println("[3] Attempt to figure out if they are friendly (Perception)");
+        String choice = Main.scanner.nextLine();
+
+        if (choice.equals("1")) {
+            System.out.println("Rolling...");
+            int roll = roll20() + charisma;
+            System.out.println("Roll + Charisma = " + roll);
+            if (roll >= 15) {
+                System.out.println("You are successful, and manage to introduce yourself peacefully without startling the stranger");
+            }
+
+        }
+        else if (choice.equalsIgnoreCase("2")) {
+            System.out.println("Rolling...");
+            int roll = roll20() + dexterity;
+            System.out.println("Roll + Dexterity = " + roll );
+            if (roll >= 15) {
+                System.out.println("Your attack is successful, you leap from the brush and tackle the figure onto the ground");
+                System.out.println("You pin down your opponent and pull off the hood");
+                System.out.println("'STOP!' the man yells. 'I mean you no harm!' ");
+
+            }
+            else {
+                System.out.println("Your attack fails, you attempt to leap onto the figure but stumble and fall behind them");
+                System.out.println("The hooded figure spins around quickly to see who you are");
+
+            }
 
 
+        }
+        else if (choice.equalsIgnoreCase("3")) {
+            System.out.println("Rolling...");
+            System.out.println("Roll + Perception = " + roll20() + perception);
+
+        }
+        else {
+            System.out.println("Try something else");
+        }
     }
 
 

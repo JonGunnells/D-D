@@ -61,9 +61,9 @@ public class Main {
             scanner.nextLine();
 
             Player.beginning();
-            while(true) {
-                Player.raft();
-            }
+
+            Player.raft();
+
             //Player.chapter2();
 
 

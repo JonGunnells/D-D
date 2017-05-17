@@ -265,6 +265,7 @@ public class Player {
         System.out.println("The wave lifts you up and hurls you across the sea, you eventually land on a sandy beach");
         System.out.println("in the Distance you can see a tower of smoke through a thick jungle of palm trees");
         while (true) {
+            System.out.println("");
             System.out.println("what would you like to do?");
             String action = Main.scanner.nextLine();
             if (action.contains("smoke")) {
@@ -292,20 +293,28 @@ public class Player {
                 System.out.println("Roll + Charisma = " + roll);
                 if (roll >= 15) {
                     System.out.println("You are successful, and manage to introduce yourself peacefully without startling the stranger");
+                    break;
                 }
-                break;
+                else {
+                    System.out.println("");
+                    break;
+                }
+
+
 
             } else if (choice.equalsIgnoreCase("2")) {
                 System.out.println("Rolling...");
                 int roll = roll20() + dexterity;
                 System.out.println("Roll + Dexterity = " + roll);
                 if (roll >= 15) {
+                    System.out.println("");
                     System.out.println("Your attack is successful, you leap from the brush and tackle the figure onto the ground");
                     System.out.println("You pin down your opponent and pull off the hood");
                     System.out.println("'STOP!' the man yells. 'I mean you no harm!' ");
                     System.out.println("You step off the man and help him to his feet");
 
                 } else {
+                    System.out.println("");
                     System.out.println("Your attack fails, you attempt to leap onto the figure but stumble and fall behind them");
                     System.out.println("The hooded figure spins around quickly to see who you are");
                     System.out.println("He removes the hood from his head and helps you to your feet");
@@ -319,6 +328,7 @@ public class Player {
                 int roll = roll20() + perception;
                 System.out.println("Roll + Perception = " + roll);
                 if (roll >= 15) {
+                    System.out.println("");
                     System.out.println("You are successful, and notice something that you recognize as friendly");
                     System.out.println("You approach the figure and introduce yourself");
                 }
@@ -332,6 +342,132 @@ public class Player {
     }
 
     public static void theMan(){
+        System.out.println("'Hello my name is _______, I live here on the island. How did you arrive here?");
+        String answer = Main.scanner.nextLine();
+
+        if(answer.contains("raft")) {
+            System.out.println("");
+            System.out.println("'Hmm a raft you say? ");
+            System.out.println("");
+
+        }
+        else {
+            System.out.println("Oh, i see...");
+
+        }
+        System.out.println("");
+        System.out.println("Well if you are trying to get back to ______ city, the path to your left will take you to the port.");
+        System.out.println("The path takes about two days but is much safer than the woods.");
+        System.out.println("But if you are in a hurry then you can try your luck through the woods, it takes half the time");
+        System.out.println("What would you like to do?");
+        System.out.println("");
+        while(true) {
+            String decision = Main.scanner.nextLine();
+            if (decision.contains("path")) {
+                System.out.println("");
+                System.out.println("'Before you go, take this'");
+                System.out.println("");
+                System.out.println("HEALTH POTION added to inventory");
+                inv.add("HEALTH POTION");
+                path();
+                break;
+            }
+            else if (decision.contains("woods")) {
+                System.out.println("");
+                System.out.println("'I see, a brave soul...you should take this, it may help'");
+                System.out.println("");
+                System.out.println("HEALTH POTION added to inventory");
+                inv.add("HEALTH POTION");
+                woods();
+                break;
+            }
+            else {
+                System.out.println("Choose either the Path or the Woods");
+            }
+
+        }
+
+    }
+
+    public static void woods(){
+        System.out.println("You decide to venture into the woods, you put your potion in your bag and head into the darkness once more");
+        System.out.println("You start to walk through the woods, pushing brush aside as you go along.");
+        System.out.println("You eventually find yourself lost, looking around in all directions everything looks the same");
+        System.out.println("what would you like to do?");
+        System.out.println("");
+        while (true) {
+            String choice = Main.scanner.nextLine();
+            if (choice.contains("compass")) {
+                System.out.println("You pull out the compass from your bag and examine it closely");
+                System.out.println("It begins to spin wildly and then abruptly stops and points to the west, you head in that direction");
+                System.out.println("");
+
+
+            }
+            else if(choice.contains("look around")) {
+                System.out.println("You look around trying to find the way but still find yourself lost");
+                System.out.println("Maybe there is something in your inventory that could help");
+                System.out.println("");
+            }
+            else {
+                System.out.println("Try something else");
+            }
+        }
+
+    }
+
+    public static void path(){
+        System.out.println("You decide to take the path, you put the potion in your bag and head onto the dirt road");
+        System.out.println("A few hours go by and your legs begin to tire from the journey");
+        System.out.println("Up ahead you see two orcs huddled over what looks like a person lying on the road");
+        System.out.println("What would you like to do?");
+        System.out.println("");
+        System.out.println("[1] Try and go around and avoid them (Dexterity)");
+        System.out.println("[2] Walk up and investigate (Charisma)");
+        System.out.println("");
+        while(true) {
+            String choice = Main.scanner.nextLine();
+            if (choice.equals("1")) {
+                System.out.println("Rolling...");
+                int decision = dexterity + roll20();
+                System.out.println("Dexterity + Roll = " + decision);
+                if (decision >= 15) {
+                    System.out.println("Successful ");
+                }
+                else {
+                    System.out.println("Failure");
+                }
+            }
+            else if (choice.equals("2")) {
+                System.out.println("Rolling...");
+                int decision = charisma + roll20();
+                System.out.println("Charisma + Roll = " + decision);
+                if(decision >= 15) {
+                    System.out.println("Successful");
+
+                }
+                else {
+                    System.out.println("Failure");
+                }
+
+            }
+            else {
+                System.out.println("Choose either 1 or 2");
+            }
+
+
+        }
+
+    }
+
+    public static void thePort(){
+        System.out.println("CHAPTER 2");
+        System.out.println("");
+        System.out.println("You finally arrive at the port of _______. You see dock workers loading up crates onto the wooden vessels.");
+        System.out.println("The only building in site is a large dock house, a couple trolls are leaning on the side");
+        System.out.println("What would you like to do?");
+        System.out.println("");
+
 
     }
 }

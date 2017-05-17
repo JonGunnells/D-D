@@ -239,10 +239,12 @@ public class Player {
         System.out.println("You have no idea where you are or how you got here, but you do know that night will be here soon, and that is not a good time to be on a raft.");
         System.out.println("");
         System.out.println("What would you like to do?");
+        System.out.println("");
         while (true) {
             String action = Main.scanner.nextLine();
 
-            if (action.contains("bag")) {
+            if (action.contains("satchel") || action.contains("bag")) {
+                System.out.println("");
                 System.out.println("You open the bag and find 10 GOLD COINS, a Compass, and a note that reads 'This should get you there -M'");
                 gold += 10;
                 inv.add("Compass");

@@ -10,16 +10,11 @@ public class Player {
     static String specialization;
     static String race;
     static int health = 100;
-    static int strength;
-    static int dexterity;
-    static int perception;
-    static int charisma;
     static int level = 1;
-    static int experience;
-    static int buff;
-    static int gold;
+    static int strength, dexterity, perception, charisma, experience, buff, gold;
 
-    public static ArrayList<String> stats = new ArrayList<>();
+
+
     public static List<String> inv = new ArrayList<String>();
 
     public static void inventory() {
@@ -28,7 +23,7 @@ public class Player {
 
     public static int roll4() {
         Random rando = new Random();
-        int number = rando.nextInt(4);
+        int number = rando.nextInt(3) + 1;
         return number;
     }
 
@@ -40,27 +35,27 @@ public class Player {
 
     public static int roll8() {
         Random rand = new Random();
-        int number = rand.nextInt(8);
+        int number = rand.nextInt(7) + 1;
         return number;
     }
 
     public static int roll10() {
         Random rand = new Random();
-        int number = rand.nextInt(10);
+        int number = rand.nextInt(9) + 1;
         return number;
     }
 
     public static int roll12() {
         System.out.println("rolling D12");
         Random rand = new Random();
-        int number = rand.nextInt(12);
+        int number = rand.nextInt(11) + 1;
         System.out.println(number);
         return number;
     }
 
     public static int roll20() {
         Random rand = new Random();
-        int number = rand.nextInt(20);
+        int number = rand.nextInt(19) + 1;
         if (number == 1) {
             System.out.println("Critical Failure!");
         }
@@ -70,29 +65,19 @@ public class Player {
         return number;
     }
 
-
-//    public static int rollStat(){
-//        Random rand = new Random();
-//        int first = rand.nextInt(6);
-//        int second = rand.nextInt(6);
-//        int third = rand.nextInt(6);
-//        int stat = first + second + third;
-//        System.out.println("Rolling 3 D6");
-//        System.out.println(first + " + " + second + " + " + third + " = " + stat);
-//        return stat;
-//    }
-
     private static void prologue() {
         System.out.println("Hello, and thank you");
         System.out.println("This game is a text-based adventure that uses virtual dice rolls to decide the outcomes ");
         System.out.println("of various interactions that happen to your character. There are 6 different dice that will ");
         System.out.println("be rolled depending on the situation. As you complete puzzles and fight enemies you will gain experience ");
         System.out.println("that will level up your character. At any time you can press _______ to bring up your stats and inventory. ");
-        System.out.println("Now prepare to enter the realm of ________. ");
+        System.out.println("Now prepare to enter the realm of ________.");
         System.out.println("Before you lies great adventure to be had, and great treasure to claim.");
         System.out.println("");
     }
 
+    //replace chars method with variable difficulty (beginner/advanced), add 'chars' and options to beginner mode
+    //remove action suggestions and stat help from advanced mode
     public static void chars() {
         System.out.println("");
         System.out.println("Human: +3 to Dexterity roll");
@@ -114,24 +99,33 @@ public class Player {
         String name = scanner.nextLine();
         System.out.println("Welcome " + name + ", let us begin your adventure");
         System.out.println("First we must create your character");
+        System.out.println("");
     }
+
 
     public static String chooseClass() {
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("What class would you like to be?");
         System.out.println("[Mage/Warrior/Rogue/Priest]");
+
         specialization = scanner.nextLine();
+
         System.out.println("Ahh yes, " + specialization + " is a fine choice");
         if (specialization.equalsIgnoreCase("mage")) {
             System.out.println("The mage bends the elements to their will, and those who dare challenge you shall be cast asunder by your awesome might");
-        } else if (specialization.equalsIgnoreCase("warrior")) {
+        }
+        else if (specialization.equalsIgnoreCase("warrior")) {
             System.out.println("The warrior is always at the head of battle, with your plate armor and heavy weapons no foe can match your strength");
 
-        } else if (specialization.equalsIgnoreCase("rogue")) {
+        }
+        else if (specialization.equalsIgnoreCase("rogue")) {
             System.out.println("The rogue lives in the shadows, as one you will be no stranger to stealth and there shall be no lock you cant pick nor foe you cant slay");
-        } else if (specialization.equalsIgnoreCase("priest")) {
+        }
+        else if (specialization.equalsIgnoreCase("priest")) {
             System.out.println("The priest uses holy magic to smite their foes, while using it to heal themselves in battle. Your devotion to the light protects you and destroys all who oppose you ");
-        } else {
+        }
+        else {
             System.out.println("Please Choose an Available Class");
         }
         return specialization;
@@ -162,7 +156,7 @@ public class Player {
 
     public static int rollStrength() {
         System.out.println("now we are going to roll your stats randomly with dice");
-        System.out.println("we will roll 3 6-sided die and the sum will be your stat");
+        System.out.println("we will roll 3 6-sided dice and the sum will be your stat");
         System.out.println("Hit ENTER");
         Main.scanner.nextLine();
         System.out.println("Rolling Strength...");
@@ -278,13 +272,14 @@ public class Player {
             }
 
         }
-
+        System.out.println("");
         System.out.println("You walk through the brush and trees toward the smoke");
         System.out.println("you see a hooded figure with its back to you, their hands hovering over the fire");
         System.out.println("What would you like to do?");
         System.out.println("[1] Approach the figure and introduce yourself (Charisma)");
         System.out.println("[2] Attempt a sneak attack (Dexterity)");
         System.out.println("[3] Attempt to figure out if they are friendly (Perception)");
+        System.out.println("");
 
         while (true) {
             String choice = Main.scanner.nextLine();
@@ -343,7 +338,7 @@ public class Player {
 
     }
 
-    public static void theMan(){
+    public static void theOldMan(){
         System.out.println("'Hello my name is _______, I live here on the island. How did you arrive here?");
         String answer = Main.scanner.nextLine();
 

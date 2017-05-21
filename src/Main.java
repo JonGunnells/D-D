@@ -39,7 +39,6 @@ public class Main {
             System.out.println("Hit ENTER");
             scanner.nextLine();
 
-
             Player.rollStrength();
             System.out.println("Hit ENTER");
             scanner.nextLine();
@@ -62,36 +61,14 @@ public class Main {
 
             Player.beginning();
             Player.raft();
-            while (true) {
-                Player.theMan();
+
+                Player.theOldMan();
                 Player.thePort();
-            }
-
-            //Player.chapter2();
 
 
-            //Enemy.firstInteraction();
+        //Enemy.firstInteraction();
 
         }
-
-    public static String nextLine() {
-        String line = scanner.nextLine();
-        while (line.startsWith("/")) {
-            if (line.equals("/inv")) {
-                Player.inventory();
-
-            }
-            else {
-                System.out.println("Command not found.");
-            }
-
-            line = scanner.nextLine();
-        }
-        return line;
-    }
-
-
-
 
 
     public static Player loadGame(String filename) {

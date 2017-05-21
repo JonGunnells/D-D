@@ -115,4 +115,18 @@ public class Puzzle {
     public static void down(){
         System.out.println();
     }
+
+    public static void theDoor(){
+        System.out.println("As you walk down the dirt path you come across a large door that appears to be made of solid gold");
+        System.out.println("You look closer you notice there is no handle to open it, but the surface is covered in scratches and dents");
+        System.out.println("what would you like to do?");
+        String action = Main.scanner.nextLine();
+        if (action.contains("examine")) {
+            System.out.println("You look closer at the door and notice a small ");
+
+        }
+        else if (action.contains("")) {
+
+        }
+    }
 }

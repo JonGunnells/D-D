@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Player {
     static boolean first = false;
+    static boolean beginner = true;
     static String specialization;
     static String race;
     static int health = 100;
@@ -100,6 +101,26 @@ public class Player {
         System.out.println("Welcome " + name + ", let us begin your adventure");
         System.out.println("First we must create your character");
         System.out.println("");
+    }
+
+    public static void difficulty(){
+        System.out.println("Please select your difficulty from the choices below. Choosing BEGINNER will enable tips");
+        System.out.println("throughout the game as well as display which actions you have the option of making");
+        System.out.println("Choosing ADVANCED will remove all hints and require you to figure out your options");
+        System.out.println("when attempting to solve conflicts and make choices");
+        System.out.println("[BEGINNER/ADVANCED]");
+
+        String difficulty = Main.scanner.nextLine();
+
+        if (difficulty.equalsIgnoreCase("beginner")) {
+            Player.beginner = true;
+        }
+        else if (difficulty.equalsIgnoreCase("advanced")) {
+            Player.beginner = false;
+        }
+        else {
+            System.out.println("Please choose difficulty from the options above");
+        }
     }
 
 

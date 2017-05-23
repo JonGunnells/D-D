@@ -32,6 +32,7 @@ public class Main {
         }
 
             Player.intro();
+            Player.difficulty();
 
             Player.chooseRace();
 

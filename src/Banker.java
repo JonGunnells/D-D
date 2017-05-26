@@ -3,10 +3,13 @@ public class Banker {
 
     public static int balance = 100;
 
+
     public static void banker() {
+
         System.out.println("Hello what can i help you with?");
 
         while (true) {
+
             System.out.println("[Deposit/Withdraw/Check Balance/Leave]");
 
             String choice = Main.scanner.nextLine();
@@ -15,12 +18,11 @@ public class Banker {
                 int answer = Main.scanner.nextInt();
                 balance = balance + answer;
                 Player.gold  = Player.gold - answer;
+
                 System.out.println("Your current bank balance is " + balance);
                 System.out.println("");
                 System.out.println("Your personal balance is " + Player.gold);
                 
-
-
             }
             else if (choice.equalsIgnoreCase("withdraw")) {
                 System.out.println("Your current balance is " + balance + " Gold Pieces");
@@ -32,14 +34,15 @@ public class Banker {
 
             }
             else if (choice.equalsIgnoreCase("leave")) {
-                System.out.println("Have a nice day");
                 break;
             }
             else {
                 System.out.println("Please enter a valid option");
             }
 
+
         }
+        System.out.println("Have a nice day");
 
     }
 }

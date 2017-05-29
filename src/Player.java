@@ -271,6 +271,7 @@ public class Player {
     }
 
     public static void raft() {
+
         System.out.println("You look up in the sky and see clouds start to head towards you, you can hear thunder in the distance");
         System.out.println("The wind starts to pick up, you feel a chill as the sun fades and the sky darkens");
         System.out.println("Suddenly you hear a monstrous roar, you turn around and see a rogue wave towering over you");
@@ -280,14 +281,17 @@ public class Player {
             System.out.println("");
             System.out.println("what would you like to do?");
             String action = Main.scanner.nextLine();
+
             if (action.contains("smoke")) {
                 break;
 
-            } else {
+            }
+            else {
                 System.out.println("Try Something Else");
             }
 
         }
+
         System.out.println("");
         System.out.println("You walk through the brush and trees toward the smoke");
         System.out.println("you see a hooded figure with its back to you, their hands hovering over the fire");
@@ -421,6 +425,9 @@ public class Player {
                 System.out.println("You look around trying to find the way but still find yourself lost");
                 System.out.println("Maybe there is something in your inventory that could help");
                 System.out.println("");
+            }
+            else if (choice.equalsIgnoreCase("/inv")) {
+                Player.inventory();
             }
             else {
                 System.out.println("Try something else");

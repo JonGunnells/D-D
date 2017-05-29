@@ -6,15 +6,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Player {
-    static boolean first = false;
-    static boolean beginner = true;
+    static boolean beginner;
     static String specialization;
     static String race;
     static int health = 100;
     static int level = 1;
     static int strength, dexterity, perception, charisma, experience, buff, gold;
-
-
 
     public static List<String> inv = new ArrayList<String>();
 
@@ -92,14 +89,12 @@ public class Player {
         System.out.println("Is this your first time playing? [Y/N]");
         String answer = scanner.nextLine();
         if (answer.equalsIgnoreCase("y")) {
-            Player.first = true;
             prologue();
 
         }
         System.out.println("Hello traveler, what is your name?");
         String name = scanner.nextLine();
         System.out.println("Welcome " + name + ", let us begin your adventure");
-        System.out.println("First we must create your character");
         System.out.println("");
     }
 
@@ -122,7 +117,6 @@ public class Player {
             System.out.println("Please choose difficulty from the options above");
         }
     }
-
 
     public static String chooseClass() {
         Scanner scanner = new Scanner(System.in);
@@ -154,9 +148,11 @@ public class Player {
 
     public static String chooseRace() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("First we must create your character");
+        System.out.println("");
         System.out.println("Choose your race");
         System.out.println("[Human/Orc/Dwarf/Elf]");
-        if (Player.first == true) {
+        if (Player.beginner == true) {
             Player.chars();
         }
         race = scanner.nextLine();
@@ -173,7 +169,6 @@ public class Player {
         }
         return race;
     }
-
 
     public static int rollStrength() {
         System.out.println("now we are going to roll your stats randomly with dice");

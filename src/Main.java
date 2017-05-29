@@ -63,12 +63,12 @@ public class Main {
             Player.beginning();
             Player.raft();
 
-            //Player.theOldMan();
-            //Player.thePort();
+            Player.theOldMan();
+            Player.thePort();
             Banker.banker();
 
 
-        //Enemy.firstInteraction();
+            Enemy.firstInteraction();
 
         }
 

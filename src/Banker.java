@@ -13,6 +13,7 @@ public class Banker {
             System.out.println("[Deposit/Withdraw/Check Balance/Leave]");
 
             String choice = Main.scanner.nextLine();
+            
             if (choice.equalsIgnoreCase("deposit")) {
                 System.out.println("How much would you like to deposit");
                 int answer = Main.scanner.nextInt();
@@ -34,15 +35,13 @@ public class Banker {
 
             }
             else if (choice.equalsIgnoreCase("leave")) {
+
                 break;
             }
             else {
                 System.out.println("Please enter a valid option");
             }
-
-
         }
         System.out.println("Have a nice day");
-
     }
 }

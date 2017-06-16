@@ -74,8 +74,6 @@ public class Player {
         System.out.println("");
     }
 
-    //replace chars method with variable difficulty (beginner/advanced), add 'chars' and options to beginner mode
-    //remove action suggestions and stat help from advanced mode
     public static void chars() {
         System.out.println("");
         System.out.println("Human: +3 to Dexterity roll");
@@ -122,7 +120,7 @@ public class Player {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("What class would you like to be?");
-        System.out.println("[Mage/Warrior/Rogue/Priest]");
+        System.out.println("[Mage/Warrior/Rogue]");
 
         specialization = scanner.nextLine();
 
@@ -136,9 +134,6 @@ public class Player {
         }
         else if (specialization.equalsIgnoreCase("rogue")) {
             System.out.println("The rogue lives in the shadows, as one you will be no stranger to stealth and there shall be no lock you cant pick nor foe you cant slay");
-        }
-        else if (specialization.equalsIgnoreCase("priest")) {
-            System.out.println("The priest uses holy magic to smite their foes, while using it to heal themselves in battle. Your devotion to the light protects you and destroys all who oppose you ");
         }
         else {
             System.out.println("Please Choose an Available Class");
@@ -156,17 +151,7 @@ public class Player {
             Player.chars();
         }
         race = scanner.nextLine();
-        if (race.equalsIgnoreCase("Human")) {
-        } else if (race.equalsIgnoreCase("Orc")) {
-            //add stat
-        } else if (race.equalsIgnoreCase("Dwarf")) {
-            //add stat
-        } else if (race.equalsIgnoreCase("Elf")) {
-            //add stat
-        } else {
-            System.out.println("Please choose a valid class");
 
-        }
         return race;
     }
 
@@ -226,11 +211,14 @@ public class Player {
         System.out.println("Here is an overview of your character");
         if (Player.race.equalsIgnoreCase("Human")) {
             Player.dexterity += 3;
-        } else if (Player.race.equalsIgnoreCase("Orc")) {
+        }
+        else if (Player.race.equalsIgnoreCase("Orc")) {
             Player.strength += 3;
-        } else if (Player.race.equalsIgnoreCase("Dwarf")) {
+        }
+        else if (Player.race.equalsIgnoreCase("Dwarf")) {
             Player.charisma += 3;
-        } else if (Player.race.equalsIgnoreCase("Elf")) {
+        }
+        else if (Player.race.equalsIgnoreCase("Elf")) {
             Player.perception += 3;
         }
         System.out.println("Level: " + level);
@@ -260,7 +248,11 @@ public class Player {
                 inv.add("Compass");
                 inv.add("Note From -M");
                 break;
-            } else {
+            }
+            else if (action.equalsIgnoreCase("/inv")) {
+                inventory();
+            }
+            else {
                 System.out.println("Try something else");
 
             }
@@ -269,6 +261,8 @@ public class Player {
         System.out.println("");
 
     }
+
+
 
     public static void raft() {
 
@@ -285,6 +279,9 @@ public class Player {
             if (action.contains("smoke")) {
                 break;
 
+            }
+            else if (action.equalsIgnoreCase("/inv")) {
+                inventory();
             }
             else {
                 System.out.println("Try Something Else");
@@ -323,6 +320,7 @@ public class Player {
                 System.out.println("Rolling...");
                 int roll = roll20() + dexterity;
                 System.out.println("Roll + Dexterity = " + roll);
+
                 if (roll >= 15) {
                     System.out.println("");
                     System.out.println("Your attack is successful, you leap from the brush and tackle the figure onto the ground");
@@ -330,7 +328,8 @@ public class Player {
                     System.out.println("'STOP!' the man yells. 'I mean you no harm!' ");
                     System.out.println("You step off the man and help him to his feet");
 
-                } else {
+                }
+                else {
                     System.out.println("");
                     System.out.println("Your attack fails, you attempt to leap onto the figure but stumble and fall behind them");
                     System.out.println("The hooded figure spins around quickly to see who you are");
@@ -340,7 +339,8 @@ public class Player {
                 break;
 
 
-            } else if (choice.equalsIgnoreCase("3")) {
+            }
+            else if (choice.equalsIgnoreCase("3")) {
                 System.out.println("Rolling...");
                 int roll = roll20() + perception;
                 System.out.println("Roll + Perception = " + roll);
@@ -351,7 +351,8 @@ public class Player {
                 }
                 break;
 
-            } else {
+            }
+            else {
                 System.out.println("Select one of the options");
             }
         }
@@ -363,7 +364,6 @@ public class Player {
         String answer = Main.scanner.nextLine();
 
         if(answer.contains("raft")) {
-            System.out.println("");
             System.out.println("'Hmm a raft you say? ");
             System.out.println("");
 
@@ -385,6 +385,7 @@ public class Player {
                 System.out.println("'Before you go, take this'");
                 System.out.println("");
                 System.out.println("HEALTH POTION added to inventory");
+                System.out.println("");
                 inv.add("HEALTH POTION");
                 path();
                 break;
@@ -397,6 +398,9 @@ public class Player {
                 inv.add("HEALTH POTION");
                 woods();
                 break;
+            }
+            else if (decision.equalsIgnoreCase("/inv")) {
+                inventory();
             }
             else {
                 System.out.println("Choose either the Path or the Woods");
@@ -412,6 +416,7 @@ public class Player {
         System.out.println("You eventually find yourself lost, looking around in all directions everything looks the same");
         System.out.println("what would you like to do?");
         System.out.println("");
+
         while (true) {
             String choice = Main.scanner.nextLine();
             if (choice.contains("compass")) {
@@ -443,8 +448,9 @@ public class Player {
         System.out.println("What would you like to do?");
         System.out.println("");
         System.out.println("[1] Try and go around and avoid them (Dexterity)");
-        System.out.println("[2] Walk up and investigate (Charisma)");
+        System.out.println("[2] Walk up and investigate (No Roll Required)");
         System.out.println("");
+
         while(true) {
             String choice = Main.scanner.nextLine();
             if (choice.equals("1")) {
@@ -459,25 +465,50 @@ public class Player {
                 }
             }
             else if (choice.equals("2")) {
-                System.out.println("Rolling...");
-                int decision = charisma + roll20();
-                System.out.println("Charisma + Roll = " + decision);
-                if(decision >= 15) {
-                    System.out.println("Successful");
+
+                System.out.println("You walk up and ask what has happened");
+                System.out.println("The orcs turn around quickly, swords drawn and look at you for a moment");
+                System.out.println("'This doesn't concern you " + race + "'");
+                System.out.println("What would you like to do? ");
+                System.out.println("");
+                System.out.println("[1] Investigate Further (Charisma)");
+                System.out.println("[2] Attack and ask questions later (Strength)");
+                String action = Main.scanner.nextLine();
+
+                while(true)
+                if (action.equalsIgnoreCase("1")) {
+                    int result = charisma + roll10();
+                    System.out.println("Charisma + Roll = " + result);
+                    if (result >= 20) {
+                        System.out.println("Success!");
+                        System.out.println("You look the orc on the right in the eye and ask your question again in a firm tone");
+                        System.out.println("The orc pauses for a second, looks at his friend and then replies");
+                        System.out.println("");
+                        break;
+                    }
+                    else {
+                        System.out.println("Failure!");
+                        System.out.println("You Look the orc on the right in th eeye and ask your question again");
+                        System.out.println("The orc laughs. 'Get out of here " + race + ", before we get angry'");
+                        break;
+                    }
+
+
+                }
+                else if (action.equalsIgnoreCase("2")) {
 
                 }
                 else {
-                    System.out.println("Failure");
+                    System.out.println("Please Choose 1 or 2");
                 }
+
+
 
             }
             else {
                 System.out.println("Choose either 1 or 2");
             }
-
-
         }
-
     }
 
     public static void thePort(){
@@ -487,8 +518,6 @@ public class Player {
         System.out.println("The only building in site is a large dock house, a couple trolls are leaning on the side");
         System.out.println("What would you like to do?");
         System.out.println("");
-
-
     }
 }
 

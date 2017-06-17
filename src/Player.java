@@ -441,7 +441,7 @@ public class Player {
 
     }
 
-    public static void path(){
+    public static void path() {
         System.out.println("You decide to take the path, you put the potion in your bag and head onto the dirt road");
         System.out.println("A few hours go by and your legs begin to tire from the journey");
         System.out.println("Up ahead you see two orcs huddled over what looks like a person lying on the road");
@@ -451,14 +451,18 @@ public class Player {
         System.out.println("[2] Walk up and investigate (No Roll Required)");
         System.out.println("");
 
-        while(true) {
+        while (true) {
             String choice = Main.scanner.nextLine();
+
             if (choice.equals("1")) {
                 System.out.println("Rolling...");
                 int decision = dexterity + roll20();
                 System.out.println("Dexterity + Roll = " + decision);
+
                 if (decision >= 15) {
                     System.out.println("Successful ");
+                    System.out.println("You sneak off the beaten path and continue to walk around them");
+                    System.out.println("once the coast is clear you are able to get back on the path to the port safely");
                 }
                 else {
                     System.out.println("Failure");
@@ -473,43 +477,59 @@ public class Player {
                 System.out.println("");
                 System.out.println("[1] Investigate Further (Charisma)");
                 System.out.println("[2] Attack and ask questions later (Strength)");
+                System.out.println("[3] Continue on your way like a little bitch");
                 String action = Main.scanner.nextLine();
 
-                while(true)
-                if (action.equalsIgnoreCase("1")) {
-                    int result = charisma + roll10();
-                    System.out.println("Charisma + Roll = " + result);
-                    if (result >= 20) {
-                        System.out.println("Success!");
-                        System.out.println("You look the orc on the right in the eye and ask your question again in a firm tone");
-                        System.out.println("The orc pauses for a second, looks at his friend and then replies");
-                        System.out.println("");
+                while (true)
+
+                    if (action.equals("1")) {
+                        int result = charisma + roll10();
+                        System.out.println("Charisma + Roll = " + result);
+
+                        if (result >= 20) {
+                            System.out.println("Success!");
+                            System.out.println("You look the orc on the right in the eye and ask your question again in a firm tone");
+                            System.out.println("The orc pauses for a second, looks at his friend and then replies");
+                            System.out.println("Look we found him like 'dis, alright. See for yourself, e aint go no marks on him.");
+                            System.out.println("");
+                            System.out.println("They move out the way as you approach the man");
+                            System.out.println("You kneel down and notice the orcs were telling the truth, the man is struck dead");
+                            System.out.println("with no visable wounds or cause of death. Suddenly you notice a small object around");
+                            System.out.println("his neck. You reach down and pull the chain off when the orcs turn away");
+                            System.out.println("MYSTERIOUS KEY added to inventory");
+
+                            inv.add("MYSTERIOUS KEY");
+                            break;
+                        } else {
+                            System.out.println("Failure!");
+                            System.out.println("You Look the orc on the right in th eeye and ask your question again");
+                            System.out.println("The orc laughs. 'Get out of here " + race + ", before we get angry'");
+                            System.out.println("You put your head down and keep along the path like a little bitch");
+                            break;
+                        }
+
+                    }
+                    else if (action.equals("2")) {
                         break;
+
+                    }
+                    else if (action.equals("3")) {
+                        System.out.println("You put your head down and keep along the path like a little bitch");
+                        System.out.println("You probably missed out on some bitchin' treasure or something");
+                        break;
+
                     }
                     else {
-                        System.out.println("Failure!");
-                        System.out.println("You Look the orc on the right in th eeye and ask your question again");
-                        System.out.println("The orc laughs. 'Get out of here " + race + ", before we get angry'");
-                        break;
+                        System.out.println("Please Choose 1, 2 or 3");
                     }
-
-
-                }
-                else if (action.equalsIgnoreCase("2")) {
-
-                }
-                else {
-                    System.out.println("Please Choose 1 or 2");
-                }
-
-
-
-            }
-            else {
-                System.out.println("Choose either 1 or 2");
             }
         }
     }
+
+
+
+
+
 
     public static void thePort(){
         System.out.println("CHAPTER 2");

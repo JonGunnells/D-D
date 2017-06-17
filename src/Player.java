@@ -16,7 +16,9 @@ public class Player {
     public static List<String> inv = new ArrayList<String>();
 
     public static void inventory() {
-        System.out.println(inv);
+        System.out.println("Inventory = " +inv);
+        System.out.println("");
+        System.out.println("Gold = " + gold);
     }
 
     public static int roll4() {
@@ -477,7 +479,8 @@ public class Player {
                 System.out.println("");
                 System.out.println("[1] Investigate Further (Charisma)");
                 System.out.println("[2] Attack and ask questions later (Strength)");
-                System.out.println("[3] Continue on your way like a little bitch");
+                System.out.println("[3] Bribe one of them for info (5 Gold) ");
+                System.out.println("[4] Continue on your way like a little bitch");
                 String action = Main.scanner.nextLine();
 
                 while (true)
@@ -514,6 +517,19 @@ public class Player {
 
                     }
                     else if (action.equals("3")) {
+                        System.out.println("You pull out 5 gold pieces from your bag and hand one of the orcs the gold");
+                        System.out.println("'Ey look, truth is...we found im like 'dis. He aint got no marks on him, look for yourself");
+                        System.out.println("They move out the way as you approach the man");
+                        System.out.println("You kneel down and notice the orcs were telling the truth, the man is struck dead");
+                        System.out.println("with no visable wounds or cause of death. Suddenly you notice a small object around");
+                        System.out.println("his neck. You reach down and pull the chain off when the orcs turn away");
+                        System.out.println("MYSTERIOUS KEY added to inventory");
+                        gold -= 2;
+                        inv.add("MYSTERIOUS KEY");
+                        System.out.println("gold = " + gold);
+                        break;
+                    }
+                    else if (action.equals("4")) {
                         System.out.println("You put your head down and keep along the path like a little bitch");
                         System.out.println("You probably missed out on some bitchin' treasure or something");
                         break;

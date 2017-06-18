@@ -31,44 +31,44 @@ public class Main {
             }
         }
 
-//            Player.intro();
-//            Player.difficulty();
-//
-//            Player.chooseRace();
-//
-//            Player.chooseClass();
-//            System.out.println("Hit ENTER");
-//            scanner.nextLine();
-//
-//            Player.rollStrength();
-//            System.out.println("Hit ENTER");
-//            scanner.nextLine();
-//
-//            Player.rollCharisma();
-//            System.out.println("Hit ENTER");
-//            scanner.nextLine();
-//
-//            Player.rollDexterity();
-//            System.out.println("Hit ENTER");
-//            scanner.nextLine();
-//
-//            Player.rollPerception();
-//            System.out.println("Hit ENTER");
-//            scanner.nextLine();
-//
-//            Player.printCharacter();
-//            System.out.println("Hit ENTER");
-//            scanner.nextLine();
-//
-//            Player.beginning();
-//            Player.raft();
-//
-//            Player.theOldMan();
-//            Player.thePort();
-            Banker.banker();
+            Player.intro();
+            //Player.difficulty();
+
+            Player.chooseRace();
+
+            Player.chooseClass();
+            System.out.println("Hit ENTER");
+            scanner.nextLine();
+
+            Player.rollStrength();
+            System.out.println("Hit ENTER");
+            scanner.nextLine();
+
+            Player.rollCharisma();
+            System.out.println("Hit ENTER");
+            scanner.nextLine();
+
+            Player.rollDexterity();
+            System.out.println("Hit ENTER");
+            scanner.nextLine();
+
+            Player.rollPerception();
+            System.out.println("Hit ENTER");
+            scanner.nextLine();
+
+            Player.printCharacter();
+            System.out.println("Hit ENTER");
+            scanner.nextLine();
+
+            Player.beginning();
+            Player.raft();
+            Player.theOldMan();
+            Player.thePort();
+            Town.town();
+
 
 //
-//            Enemy.firstInteraction();
+//       Enemy.firstInteraction();
 
         //Merchant.merchant();
 

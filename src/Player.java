@@ -11,7 +11,7 @@ public class Player {
     static String race;
     static int health = 100;
     static int level = 1;
-    static int strength, dexterity, perception, charisma, experience, buff, gold = 1000;
+    static int strength, dexterity, perception, charisma, experience, buff, gold;
 
     public static List<String> inv = new ArrayList<String>();
 

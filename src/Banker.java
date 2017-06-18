@@ -16,9 +16,6 @@ public class Banker {
         System.out.println("Hello what can i help you with?");
         options();
 
-
-
-
         while (true) {
 
             String choice = Main.scanner.nextLine();

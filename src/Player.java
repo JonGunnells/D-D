@@ -11,7 +11,7 @@ public class Player {
     static String race;
     static int health = 100;
     static int level = 1;
-    static int strength, dexterity, perception, charisma, experience, buff, gold;
+    static int strength, dexterity, perception, charisma, experience, buff, gold = 1000;
 
     public static List<String> inv = new ArrayList<String>();
 
@@ -470,6 +470,10 @@ public class Player {
                     System.out.println("Failure");
                 }
             }
+            else if (choice.equalsIgnoreCase("/inv")) {
+                    inventory();
+
+            }
             else if (choice.equals("2")) {
 
                 System.out.println("You walk up and ask what has happened");
@@ -513,6 +517,7 @@ public class Player {
 
                     }
                     else if (action.equals("2")) {
+
                         break;
 
                     }
@@ -524,16 +529,22 @@ public class Player {
                         System.out.println("with no visable wounds or cause of death. Suddenly you notice a small object around");
                         System.out.println("his neck. You reach down and pull the chain off when the orcs turn away");
                         System.out.println("MYSTERIOUS KEY added to inventory");
-                        gold -= 2;
+                        gold -= 5;
                         inv.add("MYSTERIOUS KEY");
-                        System.out.println("gold = " + gold);
+
                         break;
                     }
                     else if (action.equals("4")) {
                         System.out.println("You put your head down and keep along the path like a little bitch");
                         System.out.println("You probably missed out on some bitchin' treasure or something");
+
                         break;
 
+                    }
+                    else if (action.equalsIgnoreCase("/inv")) {
+                            inventory();
+
+                            break;
                     }
                     else {
                         System.out.println("Please Choose 1, 2 or 3");
@@ -541,10 +552,6 @@ public class Player {
             }
         }
     }
-
-
-
-
 
 
     public static void thePort(){

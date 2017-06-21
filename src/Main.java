@@ -83,7 +83,8 @@ public class Main {
             String contents = scanner.next();
             JsonParser parser = new JsonParser();
             return parser.parse(contents, Player.class);
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e) {
         }
         return null;
     }

@@ -17,7 +17,6 @@ public class Player {
 
     public static void inventory() {
         System.out.println("Inventory = " +inv);
-        System.out.println("");
         System.out.println("Gold = " + gold);
     }
 
@@ -478,7 +477,7 @@ public class Player {
 
                 System.out.println("You walk up and ask what has happened");
                 System.out.println("The orcs turn around quickly, swords drawn and look at you for a moment");
-                System.out.println("'This doesn't concern you " + race + "'");
+                System.out.println("'This doesn't concern you " + specialization + "'");
                 System.out.println("What would you like to do? ");
                 System.out.println("");
                 System.out.println("[1] Investigate Further (Charisma)");
@@ -510,7 +509,7 @@ public class Player {
                         } else {
                             System.out.println("Failure!");
                             System.out.println("You Look the orc on the right in th eeye and ask your question again");
-                            System.out.println("The orc laughs. 'Get out of here " + race + ", before we get angry'");
+                            System.out.println("The orc laughs. 'Get out of here " + specialization + ", before we get angry'");
                             System.out.println("You put your head down and keep along the path like a little bitch");
                             break;
                         }
